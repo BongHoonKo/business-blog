@@ -1,0 +1,31 @@
+baseURL = "https://bonghoonko.github.io/"
+languageCode = "en-us"
+title = "Business"
+theme = "startbootstrap-clean-blog-master"
+copyright = "©DKBMC. All rights reserved. Powered by GitHub Pages."
+paginate = 6
+
+[params]
+  DateForm = "Mon, Jan 2, 2006"
+  Description = "DK BMC Business Blog"
+  Author = "DK BMC"
+  # email = "benoit.benedetti@gmail.com"
+  Ganalytics = "XX-00000000-0"
+  # This will load all the CSS defined in the list
+  # customCSS = ["<absolute path to CSS>", "/static/css/test.css", "<or just load it off the internet>"]
+
+[[params.social]]
+    title = "github"
+    url = "https://github.com/DKBMC-Official"
+[[params.social]]
+    title = "facebook"
+    url = "https://www.facebook.com/DKBMCLOUD/"
+
+[[menu.main]]
+  name = "home"
+  url = "/"
+  weight = -200
+[[menu.main]]
+  name = "Posts"   
+  url = "/post/" 
+  weight = -180

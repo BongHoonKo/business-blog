@@ -1,0 +1,51 @@
+{{ partial "header.html" .}}
+
+    <!-- Page Header -->
+    <header class="intro-header main-header" style="background-image: url('{{ .Site.BaseURL }}/img/business.jpg');position:relative;">
+      <div class="header-dimmer"></div>
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <div class="site-heading">
+             <!-- <h1><img src="{{ .Site.BaseURL }}/img/dkbmc-logo-1.png" alt="DK BMC" style="width:auto;height:65px;margin-right:15px;"/>{{ .Site.Title }}</h1> -->
+             <h1>DK BMC Business</h1>
+             <hr class="small">
+             {{ with .Site.Params.Description }}<span class="subheading">{{ . }}</span>{{ end }}
+           </div>
+         </div>
+       </div>
+     </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" style="padding-bottom: 30px;">
+      <div class="container-header">
+          <p class="recent-post">Recent Posts</p>
+          <div class="category-filter__wrap">
+            <div class="category-filter__txt" style="background-image:url('{{ .Site.BaseURL }}/img/ico-down.png');">Category
+                <ul class="category-list">
+                  <div></div>
+                    {{ range $.Site.Taxonomies.categories.ByCount }}
+                        {{ if .Name }}
+                            <li style="list-style:none;"><a href="/categories/{{ .Name | urlize}}/"> - {{ .Name }} <small>({{ .Count }})</small></a></li>
+                        {{ end }}
+                    {{end}}
+                </ul>
+            </div>
+          </div>
+      </div>
+      <div class="row post-row" style="position:relative;">
+          {{ $posts := or .Site.Params.PostSummariesFrontPage 12 }}
+          {{ range first $posts (where .Data.Pages "Type" "post") }}
+              {{ .Render "summary"}}
+          {{ end }}
+      </div>
+       <!-- Pager -->
+       <ul class="pager" style="clear:both;">
+          <li class="next">
+            <a href="{{ .Site.BaseURL }}/post/" style="float:none;border-radius:3px;">Older Posts &rarr;</a>
+          </li>
+        </ul>
+    </div>
+
+{{ partial "footer.html" .}}

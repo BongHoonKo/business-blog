@@ -1,0 +1,20 @@
+<div class="post-preview col-lg-4">
+    <div class="post-preview__container">
+      {{ if isset .Params "image" }}
+      <a href="{{ .Permalink }}" class="preview-img__a">
+        <!-- <div class="preview-dimmer"></div> -->
+        <img src="{{ .Params.image }}" alt="" class="post-thumb__img"/>
+      </a>
+      {{end}}
+      <div class="post-preview__wrap">
+        {{ partial "categories.html" .}}
+        <a href="{{ .Permalink }}">
+          <h2 class="post-title">{{ .Title }}</h2>
+          <h3 class="post-subtitle">{{ .Description }}</h3>
+        </a>
+        <div class="post-meta">
+          {{ partial "meta.html" .}}
+        </div>
+      </div>
+    </div>
+  </div>
