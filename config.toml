@@ -2,7 +2,7 @@ baseURL = "https://bonghoonko.github.io/"
 languageCode = "en-us"
 title = "Business"
 theme = "startbootstrap-clean-blog-master"
-copyright = "©DKBMC. All rights reserved. Powered by GitHub Pages."
+copyright = "©DK BMC. All rights reserved. Powered by GitHub Pages."
 paginate = 6
 
 [params]

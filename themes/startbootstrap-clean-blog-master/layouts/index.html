@@ -27,7 +27,7 @@
                   <div></div>
                     {{ range $.Site.Taxonomies.categories.ByCount }}
                         {{ if .Name }}
-                            <li style="list-style:none;"><a href="/categories/{{ .Name | urlize}}/"> - {{ .Name }} <small>({{ .Count }})</small></a></li>
+                            <li style="list-style:none;"><a href="/categories/{{ .Name | urlize}}/"> - {{ .Name | title }} <small>({{ .Count }})</small></a></li>
                         {{ end }}
                     {{end}}
                 </ul>
