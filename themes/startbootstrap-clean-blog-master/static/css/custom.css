@@ -53,7 +53,7 @@ br {
   margin-top: 60px;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header {
     margin-top: 50px;
   }
@@ -75,7 +75,7 @@ br {
   padding: 170px 0;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header.main-header .site-heading {
     padding: 120px 0;
   }
@@ -95,7 +95,7 @@ br {
   padding: 150px 0;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header .site-heading.list-heading {
     padding: 70px 0;
   }
@@ -106,7 +106,7 @@ br {
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header .site-heading.list-heading h1 {
     font-size: 4rem;
   }
@@ -120,7 +120,7 @@ br {
   padding: 6rem 0 0;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header.post-header {
     padding: 0;
   }
@@ -131,7 +131,7 @@ br {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header.post-header .post-heading.detail-heading {
     padding: 50px 0;
     background-color: transparent;
@@ -144,7 +144,7 @@ br {
   margin-bottom: 30px;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header.post-header .post-heading.detail-heading h1 {
     font-size: 3.5rem;
   }
@@ -156,7 +156,7 @@ br {
   font-weight: 300;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header.post-header .post-heading.detail-heading .subheading {
     font-size: 1.8rem;
   }
@@ -166,7 +166,7 @@ br {
   font-size: 1.8rem;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .intro-header.post-header .post-heading.detail-heading .post-preview_date {
     display: block;
   }
@@ -486,40 +486,6 @@ a:hover, a:focus {
   color: #176db5;
 }
 
-/* TABLE */
-table {
-  background: #fff;
-  margin: 20px 0 30px 0;
-  border-collapse: collapse;
-  border: 1px solid #f9f9f9;
-}
-
-th {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border: 1px solid #ccc;
-  border-bottom: 2px solid #176db5;
-}
-
-tr {
-  background: #fff;
-}
-
-table tbody tr td, table tbody tr td {
-  min-width: 40px;
-  padding: 10px 20px;
-  font-size: 0.75em;
-  letter-spacing: 0;
-  border: 1px solid #ccc;
-  font-weight: 400;
-  color: #666;
-}
-
-table tbody tr:nth-child(even), table tbody tr:nth-child(even) {
-  background-color: #f7f7f7;
-}
-
 /* loader */
 #loading {
   width: 100%;
@@ -542,7 +508,7 @@ table tbody tr:nth-child(even), table tbody tr:nth-child(even) {
   width: 11em;
   height: 11em;
   border-radius: 50%;
-  background: #ffffff;
+  background: #fff;
   background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffffff), color-stop(42%, rgba(255, 255, 255, 0)));
   background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
   position: relative;
@@ -552,29 +518,29 @@ table tbody tr:nth-child(even), table tbody tr:nth-child(even) {
   transform: translateZ(0);
 }
 
-.loader:before {
+.loader::before {
+  content: "";
   width: 50%;
   height: 50%;
-  background: #ffffff;
+  background: #fff;
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
   left: 0;
-  content: '';
 }
 
-.loader:after {
-  background: #eaeaea;
+.loader::after {
+  content: "";
   width: 75%;
   height: 75%;
   border-radius: 50%;
-  content: '';
   margin: auto;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  background: #eaeaea;
 }
 
 @-webkit-keyframes load3 {
@@ -600,6 +566,10 @@ table tbody tr:nth-child(even), table tbody tr:nth-child(even) {
 }
 
 /* 포스트 작성글 스타일 */
+.content-line {
+  /* TABLE */
+}
+
 .content-line img {
   max-width: 100%;
 }
@@ -637,7 +607,40 @@ table tbody tr:nth-child(even), table tbody tr:nth-child(even) {
   border-color: #176db5;
 }
 
-/* Footer DKBMC 홈페이지 링크 */
+.content-line table {
+  background: #fff;
+  margin: 20px 0 30px 0;
+  border-collapse: collapse;
+  border: 1px solid #f9f9f9;
+}
+
+.content-line table th {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #176db5;
+}
+
+.content-line table tr {
+  background: #fff;
+}
+
+.content-line table tbody tr td {
+  min-width: 40px;
+  padding: 10px 20px;
+  font-size: 0.75em;
+  letter-spacing: 0;
+  border: 1px solid #ccc;
+  font-weight: 400;
+  color: #666;
+}
+
+.content-line table tbody tr:nth-child(even), .content-line table tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+/* TOP Button */
 .btn-top {
   display: none;
   position: fixed;
@@ -647,6 +650,7 @@ table tbody tr:nth-child(even), table tbody tr:nth-child(even) {
   border: 0;
   outline: 0;
   opacity: 0.9;
+  padding: 0;
   z-index: 2000;
 }
 
@@ -654,13 +658,23 @@ table tbody tr:nth-child(even), table tbody tr:nth-child(even) {
   display: block;
 }
 
-@media all and (max-width: 768px) {
+.btn-top img {
+  width: 6rem;
+  height: 6rem;
+}
+
+@media all and (max-width: 767px) {
   .btn-top {
-    right: 10px;
-    bottom: 10px;
+    right: 15px;
+    bottom: 15px;
+  }
+  .btn-top img {
+    width: 4.5rem;
+    height: 4.5rem;
   }
 }
 
+/* Footer DKBMC 홈페이지 링크 */
 .dkhome-link {
   position: relative;
   display: inline-block;
