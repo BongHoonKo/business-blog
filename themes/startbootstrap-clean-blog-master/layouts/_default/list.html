@@ -15,6 +15,26 @@
   </div>
 </header>
 
+<div class="container-header m-container-header container">
+    <div class="row">
+      <div class="col-sm-12">
+          <p class="recent-post">Recent Posts</p>
+          <div class="category-filter__wrap">
+            <div class="category-filter__txt" style="background-image:url('{{ .Site.BaseURL }}/img/ico-down.png');">Category
+                <ul class="category-list">
+                  <div></div>
+                    {{ range $.Site.Taxonomies.categories.ByCount }}
+                        {{ if .Name }}
+                            <li style="list-style:none;"><a href="/categories/{{ .Name | urlize}}/"> - {{ .Name | title }} <small>({{ .Count }})</small></a></li>
+                        {{ end }}
+                    {{end}}
+                </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
 <!-- Main Content -->
 <div class="container pagination-center main-container">
   <div class="row post-row">
@@ -26,7 +46,10 @@
 </div>
 
 
-<!-- 새 페이지 레이아웃 -->
+
+<!-- 
+  새 페이지 레이아웃 
+-->
 
 <!-- Page Header -->
 <header class="intro-header sub-header" style="background-image: url('{{ .Site.BaseURL }}/img/post-bg-1.jpg')">
