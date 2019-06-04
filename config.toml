@@ -29,3 +29,7 @@ paginate = 6
   name = "Posts"   
   url = "/post/" 
   weight = -180
+[[menu.main]]
+  name = "TEST"
+  url = "/test/"
+  weight = -160

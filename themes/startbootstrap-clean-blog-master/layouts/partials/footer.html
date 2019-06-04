@@ -126,6 +126,18 @@
     var maxHeight = Math.max.apply(null, heightArray);
     $(".post-row").css("height", maxHeight + 20 + "px");
   }
+
+  var headTitle = $(".list-heading h1").text();
+  var $con = $(".sub-container");
+  var $hd = $(".sub-header");
+  if(headTitle !== "Posts") {
+    $(".main-container, .m-header").remove();
+    $con.show();
+  }
+  else {
+    $con.remove();
+    $hd.remove();
+  }  
 </script>
 
 {{ template "_internal/google_analytics.html" . }}
